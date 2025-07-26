@@ -2,9 +2,9 @@
   "model_type": "RandomForest",
   "feature_count": 20,
   "cross_validation_folds": 5,
-  "avg_accuracy": 0.7176470588235294,
-  "avg_f1": 0.7800610609061395,
-  "best_fold_accuracy": 0.8529411764705882,
+  "avg_accuracy": 0.711764705882353,
+  "avg_f1": 0.7665242036519231,
+  "best_fold_accuracy": 0.9117647058823529,
   "speakers": [
     "abiodun",
     "anissa",
@@ -31,5 +31,5 @@
     "reverb_light",
     "reverb_heavy"
   ],
-  "datetime": "2025-07-25 02:35:23"
+  "datetime": "2025-07-25 13:04:23"
 }
