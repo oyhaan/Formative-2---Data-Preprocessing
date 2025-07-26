@@ -2,16 +2,24 @@
   "model_type": "RandomForest",
   "feature_count": 20,
   "cross_validation_folds": 5,
-  "avg_accuracy": 0.7176470588235294,
-  "avg_f1": 0.7800610609061395,
-  "best_fold_accuracy": 0.8529411764705882,
+  "avg_accuracy": 0.7352941176470589,
+  "avg_f1": 0.790314500619849,
+  "avg_customer_accuracy": 0.7352941176470589,
+  "best_fold_accuracy": 0.8823529411764706,
   "speakers": [
     "abiodun",
     "anissa",
-    "gauis",
+    "gaius",
     "nicolas",
     "owen"
   ],
+  "customer_ids": {
+    "abiodun": 189,
+    "anissa": 103,
+    "gaius": 120,
+    "nicolas": 177,
+    "owen": 187
+  },
   "augmentation_types": [
     "original_with_silence",
     "silence_trimmed",
@@ -31,5 +39,5 @@
     "reverb_light",
     "reverb_heavy"
   ],
-  "datetime": "2025-07-25 02:35:23"
+  "datetime": "2025-07-27 00:32:37"
 }
