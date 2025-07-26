@@ -8,8 +8,8 @@ import tempfile
 st.title("🔐 Secure Product Recommendation System")
 
 face_model = joblib.load("../models/face_recognition_model.pkl")
-#voice_model = joblib.load("models/voice_verification_model.pkl")
-#product_model = joblib.load("models/product_recommendation_model.pkl")
+voice_model = joblib.load("../models/voiceprint_verification_model.pkl")
+product_model = joblib.load("../models/product_recommendation_model.pkl")
 
 def extract_histogram_features(img):
     chans = cv2.split(img)
@@ -38,20 +38,20 @@ if face_file:
     else:
         st.error("❌ Failed to decode image. Please upload a valid image file.")
 
-    #st.header("Step 2: Upload Voice Confirmation")
-    #audio_file = st.file_uploader("Upload your voice (.wav)", type=["wav"])
-    #if audio_file:
-        #with tempfile.NamedTemporaryFile(delete=False) as tmp:
-            #tmp.write(audio_file.read())
-            #audio_feat = extract_audio_features(tmp.name).reshape(1, -1)
-            #phrase = voice_model.predict(audio_feat)[0]
-            #st.success(f"🔊 Voice Verified: '{phrase}'")
+    st.header("Step 2: Upload Voice Confirmation")
+    audio_file = st.file_uploader("Upload your voice (.wav)", type=["wav"])
+    if audio_file:
+        with tempfile.NamedTemporaryFile(delete=False) as tmp:
+            tmp.write(audio_file.read())
+            audio_feat = extract_audio_features(tmp.name).reshape(1, -1)
+            phrase = voice_model.predict(audio_feat)[0]
+            st.success(f"🔊 Voice Verified: '{phrase}'")
 
-            #if phrase.lower() in ["yes", "approve", "confirm transaction"]:
-                #st.header("Step 3: Product Recommendation")
+            if phrase.lower() in ["yes", "approve", "confirm transaction"]:
+                st.header("Step 3: Product Recommendation")
                 # Dummy input features
-                #input_data = np.random.rand(1, product_model.n_features_in_)
-                #predicted_product = product_model.predict(input_data)[0]
-                #st.success(f"🎯 Recommended Product: {predicted_product}")
-            #else:
-                #st.error("❌ Voice authentication failed. Access denied.")
+                input_data = np.random.rand(1, product_model.n_features_in_)
+                predicted_product = product_model.predict(input_data)[0]
+                st.success(f"🎯 Recommended Product: {predicted_product}")
+            else:
+                st.error("❌ Voice authentication failed. Access denied.")
