@@ -39,6 +39,13 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)
+max_prob = y_proba.max()
+
+if max_prob < 0.7:
+    print("Unknown person (low confidence)")
+else:
+    predicted_class = model.predict(X_test)[0]
+    print(f"Predicted customer ID: {predicted_class}")
 
 accuracy = model.score(X_test, y_test)
 f1 = f1_score(y_test, y_pred, average='weighted')
