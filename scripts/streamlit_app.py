@@ -8,7 +8,7 @@ import pandas as pd
 
 st.title("🔐 Secure Product Recommendation System")
 
-# Load face recognition model (unchanged)
+# Load face recognition model
 face_model = joblib.load("models/face_recognition_model.pkl")
 
 # Load voiceprint verification components
@@ -18,7 +18,7 @@ voice_label_encoder = joblib.load("models/voiceprint_label_encoder.pkl")
 voice_feature_cols = joblib.load("models/voiceprint_feature_columns.pkl")
 person_to_customer_id = joblib.load("models/voiceprint_person_to_customer.pkl")
 
-# Load product recommendation model (unchanged)
+# Load product recommendation model
 product_model = joblib.load("models/product_recommendation_model.joblib")
 
 def extract_histogram_features(img):
@@ -96,6 +96,8 @@ if face_file:
             if predicted_customer_id == face_customer_id:
                 st.success(f"🔊 Voice Verified: Uploaded audio matches {predicted_speaker.title()}\'s image")
                 st.header("Step 3: Product Recommendation")
+
+                
                 # Dummy input features for product recommendation
                 input_data = np.random.rand(1, product_model.n_features_in_)
                 predicted_product = product_model.predict(input_data)[0]
