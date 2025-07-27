@@ -4,9 +4,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score, log_loss, classification_report
 import joblib
 
-IMAGE_FEATURES_PATH = "image_features.csv"
-CUSTOMER_DATA_PATH = "../tables/merged_customer_data.csv"
-MODEL_OUTPUT_PATH = "../../models/face_recognition_model.pkl"
+IMAGE_FEATURES_PATH = "./data/images/image_features.csv"
+CUSTOMER_DATA_PATH = "./data/tables/merged_customer_data.csv"
+MODEL_OUTPUT_PATH = "./models/face_recognition_model.pkl"
 
 features_df = pd.read_csv(IMAGE_FEATURES_PATH)
 customer_df = pd.read_csv(CUSTOMER_DATA_PATH)
