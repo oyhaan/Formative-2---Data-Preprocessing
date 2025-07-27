@@ -2,10 +2,10 @@
   "model_type": "RandomForest",
   "feature_count": 20,
   "cross_validation_folds": 5,
-  "avg_accuracy": 0.7352941176470589,
-  "avg_f1": 0.790314500619849,
-  "avg_customer_accuracy": 0.7352941176470589,
-  "best_fold_accuracy": 0.8823529411764706,
+  "avg_accuracy": 0.7647058823529411,
+  "avg_f1": 0.8144741999658581,
+  "avg_customer_accuracy": 0.7647058823529411,
+  "best_fold_accuracy": 0.9117647058823529,
   "speakers": [
     "abiodun",
     "anissa",
@@ -39,5 +39,5 @@
     "reverb_light",
     "reverb_heavy"
   ],
-  "datetime": "2025-07-27 00:32:37"
+  "datetime": "2025-07-27 02:54:23"
 }
