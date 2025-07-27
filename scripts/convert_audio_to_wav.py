@@ -5,7 +5,7 @@ import subprocess
 audio_dir = './data/sound'
 
 # Supported input formats for conversion
-input_exts = ['.m4a', '.aac']
+input_exts = ['.m4a', '.aac', '.ogg', '.mp3']
 
 def convert_to_wav(input_path, output_path):
     cmd = [
