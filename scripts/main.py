@@ -85,6 +85,6 @@ def verify_identity(image_path, audio_path):
         return False
 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     os.makedirs('models', exist_ok=True)
     print("Pipeline completed successfully.")
